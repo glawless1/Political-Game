@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement; // Add this!
 
 public class StartButtonHandler : MonoBehaviour
 {
-    // Call this from the button's OnClick event
+    // The name of the scene to load
+    [SerializeField] private string nextGameLevel = "NewsLoading";  // Fixed declaration
+
+    // Function for button clicking
     public void OnStartButtonClicked()
     {
-        // Loads the next scene in the build order
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Load the scene
+        Debug.Log("Button Clicked");
+        SceneManager.LoadScene(nextGameLevel);
+        Debug.Log("Next Scene Loaded");
     }
 }
